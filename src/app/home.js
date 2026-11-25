@@ -5,9 +5,10 @@ import { t } from '../i18n.js';
 initLayout(null);
 
 function renderGrids() {
-  const groups = { files: 'grid-files', text: 'grid-text', dev: 'grid-dev' };
+  const groups = { files: 'grid-files', text: 'grid-text', daily: 'grid-daily', dev: 'grid-dev' };
   for (const [group, elId] of Object.entries(groups)) {
     const el = document.getElementById(elId);
+    if (!el) continue;
     el.innerHTML = '';
     for (const tool of TOOLS_LIST.filter((x) => x.group === group)) {
       const a = document.createElement('a');

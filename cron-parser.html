@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cron Expression Tool — Aixuno Devtools</title>
+    <meta name="description" content="Parse cron expressions in plain language (English/中文) and preview the next run times. Free, local." />
+    <link rel="canonical" href="https://devtools.aixuno.com/cron-parser.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">⏰ <span data-i18n="t_cron_name">Cron</span></span>
+        <h1><span data-i18n="cron_h1">Cron Expression Tool</span> <span class="grad" data-i18n="cron_h1_g">explain &amp; preview</span></h1>
+        <p class="lead" data-i18n="cron_lead">Plain-language explanation plus the next 5 run times for any cron expression.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <label class="field">Cron</label>
+        <input type="text" id="expr" value="0 9 * * 1-5" style="font-family: var(--mono)" />
+        <div class="btn-row"><button id="btn-cron" class="btn btn-primary" data-i18n="cron_parse">Parse</button></div>
+        <p id="cron-status" style="margin: 12px 0 0; font-size: 14.5px; font-weight: 650"></p>
+      </div>
+      <div class="card" id="cron-next-card" hidden>
+        <h2 data-i18n="cron_next">Next 5 runs</h2>
+        <div class="result-list" id="cron-next"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/cron-parser.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mortgage Calculator — Aixuno Devtools</title>
+    <meta name="description" content="Calculate mortgage monthly payments — equal installment (等额本息) and equal principal (等额本金), with amortization details. Free, local." />
+    <link rel="canonical" href="https://devtools.aixuno.com/mortgage-calculator.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🏠 <span data-i18n="t_mort_name">Mortgage</span></span>
+        <h1><span data-i18n="mort_h1">Mortgage Calculator</span> <span class="grad" data-i18n="mort_h1_g">本息 &amp; 本金</span></h1>
+        <p class="lead" data-i18n="mort_lead">Monthly payment, total interest and amortization details for both repayment methods.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <div style="display: grid; gap: 12px; grid-template-columns: 1fr 1fr 1fr">
+          <div>
+            <label class="field" data-i18n="mort_amount">Loan amount (¥)</label>
+            <input type="number" id="amount" min="0" step="10000" value="1000000" />
+          </div>
+          <div>
+            <label class="field" data-i18n="mort_rate">Annual rate (%)</label>
+            <input type="number" id="rate" min="0" step="0.01" value="3.6" />
+          </div>
+          <div>
+            <label class="field" data-i18n="mort_years">Term (years)</label>
+            <input type="number" id="years" min="1" max="50" step="1" value="30" />
+          </div>
+        </div>
+        <div class="btn-row" style="align-items: center">
+          <button id="btn-mort" class="btn btn-primary" data-i18n="mort_calc">Calculate</button>
+          <select id="mode" style="width: auto">
+            <option value="annuity" data-i18n-text="mort_annuity">Equal installment (等额本息)</option>
+            <option value="principal" data-i18n-text="mort_principal">Equal principal (等额本金)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card" id="mort-out-card" hidden>
+        <h2 data-i18n="mort_result">Result</h2>
+        <div class="result-list" id="mort-out"></div>
+      </div>
+      <div class="card" id="sched-card" hidden>
+        <h2 data-i18n="mort_sched">Amortization (first 12 months)</h2>
+        <div style="overflow-x: auto">
+          <table class="compare" style="font-size: 13px; width: 100%">
+            <thead><tr>
+              <th data-i18n="mort_month">#</th>
+              <th data-i18n="mort_payment">Payment</th>
+              <th data-i18n="mort_interest">Interest</th>
+              <th data-i18n="mort_principal_col">Principal</th>
+              <th data-i18n="mort_balance">Balance</th>
+            </tr></thead>
+            <tbody id="sched-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/mortgage-calculator.js"></script>
+  </body>
+</html>

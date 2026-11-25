@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Regex Tester — Aixuno Devtools</title>
+    <meta name="description" content="Test regular expressions live — flags, highlighted matches and capture groups. Free, local, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/regex-tester.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <style>
+      .rx-mark { background: #ffe9a8; border-radius: 3px; padding: 1px 2px; }
+      .rx-mark.rx-1 { background: #c9f0ff; }
+      .rx-mark.rx-2 { background: #ffd9ec; }
+      .rx-mark.rx-3 { background: #d9ffd9; }
+    </style>
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">.* <span data-i18n="t_regex_name">Regex Tester</span></span>
+        <h1><span data-i18n="rx_h1">Regex Tester</span> <span class="grad" data-i18n="rx_h1_g">live matches</span></h1>
+        <p class="lead" data-i18n="rx_lead">Type a pattern, paste text, see matches and capture groups instantly.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <label class="field">Pattern</label>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap">
+          <code style="color: var(--accent); font-weight: 700; font-family: var(--mono)">/</code>
+          <input type="text" id="pattern" placeholder="(\w+)@(\w+)\.com" style="flex: 1; font-family: var(--mono)" />
+          <code style="color: var(--accent); font-weight: 700; font-family: var(--mono)">/</code>
+          <span id="flags-box" style="display: inline-flex; gap: 10px; font-size: 13.5px; font-family: var(--mono); align-items: center; background: #fbfcfe; border: 1px solid #d6dbe6; border-radius: 10px; padding: 6px 12px">
+            <label><input type="checkbox" id="f-g" checked /> g</label>
+            <label><input type="checkbox" id="f-i" /> i</label>
+            <label><input type="checkbox" id="f-m" checked /> m</label>
+            <label><input type="checkbox" id="f-s" /> s</label>
+          </span>
+        </div>
+        <label class="field" style="margin-top: 14px">Test text</label>
+        <textarea id="text" style="min-height: 160px">Contact: alice@example.com or bob@test.org
+No email here.</textarea>
+        <p id="rx-status" style="margin: 12px 0 0; font-size: 13.5px"></p>
+      </div>
+      <div class="card" id="rx-out-card" hidden>
+        <h2 data-i18n="rx_matches">Matches</h2>
+        <div class="diff-out" id="rx-out"></div>
+      </div>
+      <div class="card" id="rx-groups-card" hidden>
+        <h2 data-i18n="rx_groups">Capture groups</h2>
+        <div class="result-list" id="rx-groups"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/regex-tester.js"></script>
+  </body>
+</html>

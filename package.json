@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "croner": "^11.0.1",
+    "cronstrue": "^3.50.0",
     "jsqr": "^1.4.0",
     "jszip": "^3.10.1",
     "papaparse": "^5.4.1",

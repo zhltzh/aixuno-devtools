@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JWT Decoder — Aixuno Devtools</title>
+    <meta name="description" content="Decode JWT tokens — header, payload and expiry time, all locally in your browser. No verification, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/jwt-decoder.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🔑 <span data-i18n="t_jwt_name">JWT Decoder</span></span>
+        <h1><span data-i18n="jwt_h1">JWT Decoder</span> <span class="grad" data-i18n="jwt_h1_g">header &amp; payload</span></h1>
+        <p class="lead" data-i18n="jwt_lead">Paste a JWT to inspect its header, payload and expiry — signature is not verified.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <textarea id="token" placeholder="eyJhbGciOi…"></textarea>
+        <div class="btn-row"><button id="btn-jwt" class="btn btn-primary" data-i18n="jwt_decode">Decode</button></div>
+        <p id="jwt-status" style="margin: 12px 0 0; font-size: 13.5px"></p>
+      </div>
+      <div class="card" id="jwt-header-card" hidden>
+        <h2>Header</h2>
+        <div class="diff-out" id="jwt-header"></div>
+      </div>
+      <div class="card" id="jwt-payload-card" hidden>
+        <h2>Payload</h2>
+        <div class="diff-out" id="jwt-payload"></div>
+        <div class="result-list" id="jwt-times" style="margin-top: 14px"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/jwt-decoder.js"></script>
+  </body>
+</html>

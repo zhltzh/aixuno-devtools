@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UUID Generator — Aixuno Devtools</title>
+    <meta name="description" content="Generate random UUID v4 identifiers in bulk — cryptographically secure, runs locally, free." />
+    <link rel="canonical" href="https://devtools.aixuno.com/uuid-generator.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🆔 <span data-i18n="t_uuid_name">UUID Generator</span></span>
+        <h1><span data-i18n="uuid_h1">UUID Generator</span> <span class="grad" data-i18n="uuid_h1_g">v4 bulk</span></h1>
+        <p class="lead" data-i18n="uuid_lead">Cryptographically random RFC 4122 v4 UUIDs — generate in bulk and copy.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <div class="btn-row" style="align-items: center; margin-top: 0">
+          <button id="btn-gen" class="btn btn-primary" data-i18n="uuid_generate">Generate</button>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px"><span data-i18n="uuid_count">Count</span><input type="number" id="count" min="1" max="500" value="10" style="width: 90px" /></label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px"><span>UPPERCASE</span><input type="checkbox" id="upper" /></label>
+          <button id="btn-copy" class="btn btn-secondary" data-i18n="uuid_copy_all">Copy all</button>
+        </div>
+      </div>
+      <div class="result-list" id="out"></div>
+    </div>
+    <script type="module" src="./src/app/uuid-generator.js"></script>
+  </body>
+</html>

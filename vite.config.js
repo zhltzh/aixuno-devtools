@@ -1,24 +1,38 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
 
+const pages = [
+  'index',
+  'md5-modifier',
+  'hash-calculator',
+  'timestamp',
+  'base64',
+  'url-encode',
+  'json-format',
+  'json-csv',
+  'text-diff',
+  'qrcode',
+  'password',
+  'date-calculator',
+  'tax-calculator',
+  'mortgage-calculator',
+  'random-picker',
+  'word-counter',
+  'unit-converter',
+  'regex-tester',
+  'jwt-decoder',
+  'uuid-generator',
+  'cron-parser',
+  'html-entities',
+  'color-tool',
+];
+
 export default defineConfig({
   base: './',
   build: {
     target: 'es2020',
     rollupOptions: {
-      input: {
-        index: resolve(__dirname, 'index.html'),
-        'md5-modifier': resolve(__dirname, 'md5-modifier.html'),
-        'hash-calculator': resolve(__dirname, 'hash-calculator.html'),
-        timestamp: resolve(__dirname, 'timestamp.html'),
-        base64: resolve(__dirname, 'base64.html'),
-        'url-encode': resolve(__dirname, 'url-encode.html'),
-        'json-format': resolve(__dirname, 'json-format.html'),
-        'json-csv': resolve(__dirname, 'json-csv.html'),
-        'text-diff': resolve(__dirname, 'text-diff.html'),
-        qrcode: resolve(__dirname, 'qrcode.html'),
-        password: resolve(__dirname, 'password.html'),
-      },
+      input: Object.fromEntries(pages.map((p) => [p, resolve(__dirname, `${p}.html`)])),
     },
   },
   server: {

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Income Tax Calculator — Aixuno Devtools</title>
+    <meta name="description" content="Estimate China individual income tax (IIT) from gross monthly salary, social insurance and special deductions. Free, local." />
+    <link rel="canonical" href="https://devtools.aixuno.com/tax-calculator.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">💰 <span data-i18n="t_tax_name">Income Tax</span></span>
+        <h1><span data-i18n="tax_h1">Income Tax Calculator</span> <span class="grad" data-i18n="tax_h1_g">China IIT</span></h1>
+        <p class="lead" data-i18n="tax_lead">Estimate your monthly individual income tax from gross salary, social insurance and special deductions.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <label class="field" data-i18n="tax_gross">Gross monthly salary (¥)</label>
+        <input type="number" id="gross" min="0" step="100" value="20000" />
+        <label class="field" style="margin-top: 12px" data-i18n="tax_social">Social insurance &amp; housing fund (¥/month)</label>
+        <input type="number" id="social" min="0" step="100" value="3000" />
+        <label class="field" style="margin-top: 12px" data-i18n="tax_special">Special additional deductions (¥/month)</label>
+        <input type="number" id="special" min="0" step="100" value="1500" />
+        <div class="btn-row"><button id="btn-tax" class="btn btn-primary" data-i18n="tax_calc">Calculate</button></div>
+      </div>
+      <div class="card" id="tax-out-card" hidden>
+        <h2 data-i18n="tax_result">Result (monthly average)</h2>
+        <div class="result-list" id="tax-out"></div>
+        <p style="margin: 12px 0 0; font-size: 12.5px; color: var(--ink-soft)" data-i18n="tax_note">Reference only — actual withholding uses the cumulative method.</p>
+      </div>
+    </div>
+    <script type="module" src="./src/app/tax-calculator.js"></script>
+  </body>
+</html>

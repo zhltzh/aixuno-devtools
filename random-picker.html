@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Random Picker — Aixuno Devtools</title>
+    <meta name="description" content="Pick random names or items from a list — lucky draw, roll call, raffles. Free, local, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/random-picker.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🎲 <span data-i18n="t_rand_name">Random Picker</span></span>
+        <h1><span data-i18n="rand_h1">Random Picker</span> <span class="grad" data-i18n="rand_h1_g">fair draw</span></h1>
+        <p class="lead" data-i18n="rand_lead">Paste a list (one item per line) and draw random winners.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <label class="field" data-i18n="rand_list">List — one item per line</label>
+        <textarea id="names" placeholder="Alice&#10;Bob&#10;Carol"></textarea>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 12px">
+          <label class="field" style="margin: 0"><span data-i18n="rand_count">How many?</span>
+            <input type="number" id="count" min="1" value="1" style="width: 90px" />
+          </label>
+          <label style="display: inline-flex; gap: 7px; align-items: center; font-size: 14px; margin-top: 6px">
+            <input type="checkbox" id="unique" checked /><span data-i18n="rand_unique">No repeats</span>
+          </label>
+        </div>
+        <div class="btn-row">
+          <button id="btn-pick" class="btn btn-primary" data-i18n="rand_pick">Draw</button>
+          <button id="btn-clear" class="btn btn-ghost" data-i18n="rand_clear">Clear</button>
+        </div>
+      </div>
+      <div class="card" id="result-card" hidden>
+        <h2 data-i18n="rand_result">Winners</h2>
+        <div class="result-list" id="result"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/random-picker.js"></script>
+  </body>
+</html>

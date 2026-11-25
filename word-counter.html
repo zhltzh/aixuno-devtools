@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Word Counter — Aixuno Devtools</title>
+    <meta name="description" content="Count characters, Chinese characters, English words, sentences and lines — ideal for submissions and platforms with limits. Free, local." />
+    <link rel="canonical" href="https://devtools.aixuno.com/word-counter.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🔢 <span data-i18n="t_word_name">Word Counter</span></span>
+        <h1><span data-i18n="word_h1">Word Counter</span> <span class="grad" data-i18n="word_h1_g">live stats</span></h1>
+        <p class="lead" data-i18n="word_lead">Paste text and get every useful count instantly.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <textarea id="io" placeholder="…" style="min-height: 240px"></textarea>
+      </div>
+      <div class="result-list" id="stats"></div>
+    </div>
+    <script type="module" src="./src/app/word-counter.js"></script>
+  </body>
+</html>

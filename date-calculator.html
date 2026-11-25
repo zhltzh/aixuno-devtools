@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Date Calculator — Aixuno Devtools</title>
+    <meta name="description" content="Calculate the difference between two dates (days, weeks, workdays), add or subtract days, and count down to a target date. Free, local." />
+    <link rel="canonical" href="https://devtools.aixuno.com/date-calculator.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">📅 <span data-i18n="t_date_name">Date Calculator</span></span>
+        <h1><span data-i18n="date_h1">Date Calculator</span> <span class="grad" data-i18n="date_h1_g">diff &amp; countdown</span></h1>
+        <p class="lead" data-i18n="date_lead">Date differences, day arithmetic and countdowns — all in your browser.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <h2 data-i18n="date_diff_title">Difference between two dates</h2>
+        <div style="display: grid; gap: 12px; grid-template-columns: 1fr 1fr">
+          <div><label class="field" data-i18n="date_from">From</label><input type="date" id="d-from" /></div>
+          <div><label class="field" data-i18n="date_to">To</label><input type="date" id="d-to" /></div>
+        </div>
+        <div class="btn-row"><button id="btn-diff" class="btn btn-primary" data-i18n="date_calc">Calculate</button></div>
+        <div class="result-list" id="diff-out" style="margin-top: 14px"></div>
+      </div>
+      <div class="card">
+        <h2 data-i18n="date_add_title">Add / subtract days</h2>
+        <div style="display: grid; gap: 12px; grid-template-columns: 1fr 1fr">
+          <div><label class="field" data-i18n="date_base">Base date</label><input type="date" id="a-base" /></div>
+          <div><label class="field" data-i18n="date_offset">Days (±)</label><input type="number" id="a-days" value="30" /></div>
+        </div>
+        <div class="btn-row">
+          <button id="btn-add" class="btn btn-primary" data-i18n="date_calc">Calculate</button>
+        </div>
+        <div class="result-list" id="add-out" style="margin-top: 14px"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/date-calculator.js"></script>
+  </body>
+</html>

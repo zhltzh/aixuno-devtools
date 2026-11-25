@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Entities Tool — Aixuno Devtools</title>
+    <meta name="description" content="Escape and unescape HTML entities — named and numeric — for safe embedding. Free, local, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/html-entities.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">&amp;lt; &amp;gt; <span data-i18n="t_html_name">HTML Entities</span></span>
+        <h1><span data-i18n="html_h1">HTML Entities Tool</span> <span class="grad" data-i18n="html_h1_g">escape &amp; unescape</span></h1>
+        <p class="lead" data-i18n="html_lead">Escape HTML for safe embedding, or convert entities back to text.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <textarea id="io" placeholder="<div class=&quot;hello&quot;>…"></textarea>
+        <div class="btn-row">
+          <button id="btn-enc" class="btn btn-primary" data-i18n="html_encode">Escape</button>
+          <button id="btn-dec" class="btn btn-secondary" data-i18n="html_decode">Unescape</button>
+          <button id="btn-clear" class="btn btn-ghost" data-i18n="html_clear">Clear</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/html-entities.js"></script>
+  </body>
+</html>
