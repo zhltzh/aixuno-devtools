@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JSON Formatter — Aixuno Devtools</title>
+    <meta name="description" content="Beautify, minify, validate, escape and unescape JSON — free, local, precise error locations." />
+    <link rel="canonical" href="https://devtools.aixuno.com/json-format.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">{ } <span data-i18n="t_json_name">JSON</span></span>
+        <h1><span data-i18n="json_h1">JSON Formatter</span> <span class="grad" data-i18n="json_h1_g">beautify &amp; validate</span></h1>
+        <p class="lead" data-i18n="json_lead">Beautify, minify and validate JSON with precise error locations.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <textarea id="io" placeholder='{"paste":"your JSON here"}'></textarea>
+        <div class="btn-row">
+          <button id="btn-fmt" class="btn btn-primary" data-i18n="json_format">Format</button>
+          <button id="btn-min" class="btn btn-secondary" data-i18n="json_minify">Minify</button>
+          <button id="btn-val" class="btn btn-secondary" data-i18n="json_validate">Validate</button>
+          <button id="btn-esc" class="btn btn-ghost" data-i18n="json_escape">Escape</button>
+          <button id="btn-unesc" class="btn btn-ghost" data-i18n="json_unescape">Unescape</button>
+          <button id="btn-clear" class="btn btn-ghost" data-i18n="json_clear">Clear</button>
+        </div>
+        <p id="json-msg" style="margin: 10px 0 0; font-size: 13.5px;"></p>
+      </div>
+    </div>
+    <script type="module" src="./src/app/json-format.js"></script>
+  </body>
+</html>

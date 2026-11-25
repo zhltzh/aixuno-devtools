@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QR Code Generator &amp; Scanner — Aixuno Devtools</title>
+    <meta name="description" content="Generate QR codes from text and decode QR images — size, margin and colors configurable. Free, local, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/qrcode.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">⬛ <span data-i18n="t_qr_name">QR Code</span></span>
+        <h1><span data-i18n="qr_h1">QR Code Generator &amp; Scanner</span> <span class="grad" data-i18n="qr_h1_g">make &amp; read</span></h1>
+        <p class="lead" data-i18n="qr_lead">Generate QR codes from text, or decode a QR image — all locally.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <label class="field" data-i18n="qr_content">Content</label>
+        <textarea id="qr-text" placeholder="https://example.com" style="min-height: 90px">https://devtools.aixuno.com</textarea>
+        <div class="btn-row" style="align-items: center">
+          <button id="btn-gen" class="btn btn-primary" data-i18n="qr_generate">Generate</button>
+          <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px"><span data-i18n="qr_size">Size</span><select id="qr-size" style="width: 86px"><option>256</option><option selected>512</option><option>1024</option></select></label>
+          <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px"><span data-i18n="qr_margin">Margin</span><select id="qr-margin" style="width: 66px"><option value="1">1</option><option value="2" selected>2</option><option value="4">4</option></select></label>
+        </div>
+        <div id="qr-out" style="margin-top: 16px; text-align: center"></div>
+      </div>
+      <div class="card">
+        <h2 data-i18n="qr_decode_title">Decode from image</h2>
+        <div class="dropzone" id="dz" tabindex="0" role="button">
+          <div class="dz-icon">⬛</div>
+          <div class="dz-text" data-i18n="qr_drop">Drop a QR image here</div>
+        </div>
+        <p id="qr-decoded" style="margin: 14px 0 0; font-size: 14px; word-break: break-all"></p>
+      </div>
+    </div>
+    <script type="module" src="./src/app/qrcode.js"></script>
+  </body>
+</html>

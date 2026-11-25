@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MD5 Modifier — Aixuno Devtools</title>
+    <meta
+      name="description"
+      content="Change a file's MD5 fingerprint instantly in your browser — no re-encoding, no upload, batch supported. Free and private."
+    />
+    <link rel="canonical" href="https://devtools.aixuno.com/md5-modifier.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🔁 <span data-i18n="t_md5_name">MD5 Modifier</span></span>
+        <h1><span data-i18n="md5_h1">MD5 Modifier</span> <span class="grad" data-i18n="md5_h1_g">without re-encoding</span></h1>
+        <p class="lead" data-i18n="md5_lead">Change a file’s MD5 by appending random bytes — instant, local, batch supported.</p>
+      </div>
+    </div>
+
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" data-multiple="true" tabindex="0" role="button">
+        <div class="dz-icon">📥</div>
+        <div class="dz-text" data-i18n="md5_drop">Drop files here</div>
+        <div class="dz-hint" data-i18n="md5_drop_hint">any file type · multiple selection supported</div>
+      </div>
+
+      <div id="list" class="result-list" style="margin-top: 18px"></div>
+
+      <div class="btn-row">
+        <button id="btn-all" class="btn btn-primary" data-i18n="md5_modify_all">Modify all</button>
+        <button id="btn-zip" class="btn btn-secondary" data-i18n="md5_download_zip">Download all (ZIP)</button>
+        <button id="btn-clear" class="btn btn-ghost" data-i18n="md5_clear">Clear</button>
+      </div>
+    </div>
+
+    <script type="module" src="./src/app/md5-modifier.js"></script>
+  </body>
+</html>

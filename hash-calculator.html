@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>File Hash Checker — Aixuno Devtools</title>
+    <meta
+      name="description"
+      content="Calculate MD5, SHA-1, SHA-256 and SHA-512 locally in your browser and verify against expected values. No upload, free."
+    />
+    <link rel="canonical" href="https://devtools.aixuno.com/hash-calculator.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🔐 <span data-i18n="t_hash_name">Hash Checker</span></span>
+        <h1><span data-i18n="hash_h1">File Hash Checker</span> <span class="grad" data-i18n="hash_h1_g">MD5 · SHA</span></h1>
+        <p class="lead" data-i18n="hash_lead">Compute MD5, SHA-1, SHA-256 and SHA-512 locally, then verify against an expected value.</p>
+      </div>
+    </div>
+
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button">
+        <div class="dz-icon">🔐</div>
+        <div class="dz-text" data-i18n="hash_drop">Drop a file here</div>
+        <div class="dz-hint" data-i18n="hash_drop_hint">large files supported — hashed in chunks</div>
+      </div>
+
+      <div class="card" style="margin-top: 18px" id="progress-card" hidden>
+        <div class="progress-track"><div class="progress-bar" id="pbar"></div></div>
+        <p style="margin: 8px 0 0; font-size: 13px; color: var(--ink-soft)" id="ptext"></p>
+      </div>
+
+      <div class="card" id="result-card" hidden>
+        <h2 id="file-name"></h2>
+        <div class="result-list" id="hashes"></div>
+        <label class="field" style="margin-top: 18px" data-i18n="hash_expected">Expected value (optional)</label>
+        <input type="text" id="expected" placeholder="MD5 / SHA-1 / SHA-256 / SHA-512" style="font-family: var(--mono)" />
+        <div class="btn-row">
+          <button id="btn-verify" class="btn btn-primary" data-i18n="hash_verify">Verify</button>
+          <span id="verify-out" style="align-self: center; font-size: 14px;"></span>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/app/hash-calculator.js"></script>
+  </body>
+</html>

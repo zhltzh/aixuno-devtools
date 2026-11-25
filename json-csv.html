@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JSON ⇄ CSV Converter — Aixuno Devtools</title>
+    <meta name="description" content="Convert JSON arrays to CSV and CSV back to JSON — delimiter options, header toggle, all local and free." />
+    <link rel="canonical" href="https://devtools.aixuno.com/json-csv.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">📊 <span data-i18n="t_csv_name">JSON ⇄ CSV</span></span>
+        <h1><span data-i18n="csv_h1">JSON ⇄ CSV Converter</span> <span class="grad" data-i18n="csv_h1_g">two-way</span></h1>
+        <p class="lead" data-i18n="csv_lead">Turn a JSON array of objects into CSV, or parse CSV back to JSON.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <textarea id="io" placeholder='[{"name":"Ada","age":36}]'></textarea>
+        <div class="btn-row" style="align-items: center">
+          <button id="btn-csv" class="btn btn-primary" data-i18n="csv_to_csv">JSON → CSV</button>
+          <button id="btn-json" class="btn btn-secondary" data-i18n="csv_to_json">CSV → JSON</button>
+          <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px">
+            <span data-i18n="csv_delimiter">Delimiter</span>
+            <select id="delim" style="width: 70px">
+              <option value=",">,</option>
+              <option value=";">;</option>
+              <option value="&#9;">Tab</option>
+            </select>
+          </label>
+          <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px">
+            <input type="checkbox" id="header" checked />
+            <span data-i18n="csv_header">First row is header</span>
+          </label>
+          <button id="btn-clear" class="btn btn-ghost" data-i18n="csv_clear">Clear</button>
+        </div>
+        <p id="csv-msg" style="margin: 10px 0 0; font-size: 13.5px;"></p>
+      </div>
+    </div>
+    <script type="module" src="./src/app/json-csv.js"></script>
+  </body>
+</html>

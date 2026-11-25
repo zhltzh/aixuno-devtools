@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Text Diff — Aixuno Devtools</title>
+    <meta name="description" content="Compare two texts line by line with added and removed highlights. Free, local, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/text-diff.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">± <span data-i18n="t_diff_name">Text Diff</span></span>
+        <h1><span data-i18n="diff_h1">Text Diff</span> <span class="grad" data-i18n="diff_h1_g">line by line</span></h1>
+        <p class="lead" data-i18n="diff_lead">Paste two versions and see what was added or removed.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <div style="display: grid; gap: 14px; grid-template-columns: 1fr 1fr">
+          <div>
+            <label class="field" data-i18n="diff_left">Original</label>
+            <textarea id="left" style="min-height: 220px"></textarea>
+          </div>
+          <div>
+            <label class="field" data-i18n="diff_right">Modified</label>
+            <textarea id="right" style="min-height: 220px"></textarea>
+          </div>
+        </div>
+        <div class="btn-row">
+          <button id="btn-diff" class="btn btn-primary" data-i18n="diff_compare">Compare</button>
+          <button id="btn-clear" class="btn btn-ghost" data-i18n="diff_clear">Clear</button>
+          <span id="diff-summary" style="align-self: center; font-size: 14px; color: var(--ink-soft)"></span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="diff-out" id="out"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/text-diff.js"></script>
+  </body>
+</html>

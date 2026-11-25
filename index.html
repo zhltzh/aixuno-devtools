@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aixuno Devtools — Free Local File & Developer Utilities (MD5, Hash, JSON, QR)</title>
+    <meta
+      name="description"
+      content="Free online utilities that run entirely in your browser: MD5 modifier, file hash checker, timestamp converter, Base64, URL encoder, JSON formatter, JSON⇄CSV, text diff, QR codes and password generator. Nothing is uploaded."
+    />
+    <meta name="theme-color" content="#070b16" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Aixuno Devtools" />
+    <meta property="og:title" content="Aixuno Devtools — Free Local Utilities" />
+    <meta
+      property="og:description"
+      content="MD5 modifier, hash checker, timestamp, Base64, JSON, diff, QR and password tools — 100% local processing."
+    />
+    <link rel="canonical" href="https://devtools.aixuno.com/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Aixuno Devtools",
+        "url": "https://devtools.aixuno.com/",
+        "inLanguage": ["zh-CN", "en-US"]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="hero-band">
+      <div class="wrap">
+        <span class="eyebrow">🛠 Devtools</span>
+        <h1>
+          <span data-i18n="home_title">Free Online Dev Utilities</span><br />
+          <span class="grad" data-i18n="home_title_grad">all local, all free</span>
+        </h1>
+        <p class="lead" data-i18n="home_lead">
+          MD5 modifier, hash checker, timestamp, Base64, JSON tools, text diff, QR codes and
+          password generator — every tool runs in your browser, files never leave your device.
+        </p>
+        <ul class="hero-badges">
+          <li data-i18n="home_badge1">No upload</li>
+          <li data-i18n="home_badge2">No sign-up</li>
+          <li data-i18n="home_badge3">Free forever</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="section">
+      <span class="kicker" data-i18n="home_files_title">File utilities</span>
+      <h2 data-i18n="home_files_title">File utilities</h2>
+      <div class="tool-grid" id="grid-files"></div>
+    </section>
+
+    <section class="section">
+      <span class="kicker" data-i18n="home_text_title">Text & data</span>
+      <h2 data-i18n="home_text_title">Text & data utilities</h2>
+      <div class="tool-grid" id="grid-text"></div>
+    </section>
+
+    <section class="section">
+      <span class="kicker" data-i18n="home_dev_title">Everyday</span>
+      <h2 data-i18n="home_dev_title">Everyday utilities</h2>
+      <div class="tool-grid" id="grid-dev"></div>
+    </section>
+
+    <script type="module" src="./src/app/home.js"></script>
+  </body>
+</html>
