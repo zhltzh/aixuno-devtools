@@ -7,9 +7,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "setup:ffmpeg": "node scripts/setup-ffmpeg.mjs",
+    "setup:all": "node scripts/setup-ffmpeg.mjs"
   },
   "dependencies": {
+    "@ffmpeg/core": "^0.12.10",
+    "@ffmpeg/ffmpeg": "^0.12.15",
     "@napi-rs/canvas": "^1.2.1",
     "croner": "^11.0.1",
     "cronstrue": "^3.50.0",

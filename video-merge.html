@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video Merger — Aixuno Devtools</title>
+    <meta name="description" content="Join multiple video clips into one — same-codec clips are merged without re-encoding, keeping original quality. Free, local." />
+    <link rel="canonical" href="https://devtools.aixuno.com/video-merge.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🔗 <span data-i18n="t_vmerge_name">Video Merger</span></span>
+        <h1><span data-i18n="vmerge_h1">Video Merger</span> <span class="grad" data-i18n="vmerge_h1_g">clips into one</span></h1>
+        <p class="lead" data-i18n="vmerge_lead">Join multiple clips into one file — same-codec clips keep original quality with no re-encoding.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button" data-multiple="true">
+        <div class="dz-icon">🔗</div>
+        <div class="dz-text" data-i18n="vmerge_drop">Drop videos here</div>
+        <div class="dz-hint" data-i18n="vmerge_drop_hint">multiple selection · same format works best</div>
+      </div>
+      <div class="card" id="opts" hidden>
+        <div class="result-list" id="queue" style="margin-bottom: 14px"></div>
+        <div class="btn-row">
+          <button id="btn-run" class="btn btn-primary" data-i18n="vmerge_go">Merge &amp; download</button>
+        </div>
+        <div class="progress-track" id="pbar-wrap" hidden style="margin-top: 14px"><div class="progress-bar" id="pbar"></div></div>
+        <p id="status" style="margin: 10px 0 0; font-size: 13.5px; color: var(--ink-soft)"></p>
+      </div>
+    </div>
+    <script type="module" src="./src/app/video-merge.js"></script>
+  </body>
+</html>

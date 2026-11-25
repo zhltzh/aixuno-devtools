@@ -30,6 +30,12 @@ const pages = [
   'watermark-tool',
   'image-md5',
   'grid-cutter',
+  'video-to-gif',
+  'video-trim',
+  'video-to-mp3',
+  'video-fx',
+  'video-frames',
+  'video-merge',
 ];
 
 export default defineConfig({

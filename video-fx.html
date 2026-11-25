@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video FX — Aixuno Devtools</title>
+    <meta name="description" content="Speed up, slow down, reverse or mirror a video — all in your browser with ffmpeg.wasm. Free, local, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/video-fx.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">⚡ <span data-i18n="t_vfx_name">Video FX</span></span>
+        <h1><span data-i18n="vfx_h1">Video FX</span> <span class="grad" data-i18n="vfx_h1_g">speed · reverse · mirror</span></h1>
+        <p class="lead" data-i18n="vfx_lead">Change playback speed, reverse the video, or flip it — one operation at a time, runs locally.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button">
+        <div class="dz-icon">⚡</div>
+        <div class="dz-text" data-i18n="vfx_drop">Drop a video here</div>
+        <div class="dz-hint" data-i18n="vfx_drop_hint">MP4 · WebM · MOV</div>
+      </div>
+      <div class="card" id="opts" hidden>
+        <p style="margin: 0 0 12px; font-weight: 700" id="f-name"></p>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap">
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px"><span data-i18n="vfx_mode">Effect</span>
+            <select id="mode" style="width: 150px">
+              <option value="speed" data-i18n-text="vfx_speed">Speed</option>
+              <option value="reverse" data-i18n-text="vfx_reverse">Reverse</option>
+              <option value="mirror" data-i18n-text="vfx_mirror">Mirror</option>
+            </select>
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px" id="speed-box">
+            <span data-i18n="vfx_factor">Factor</span>
+            <select id="factor" style="width: 90px"><option value="2">2×</option><option value="0.5">0.5×</option><option value="3">3×</option><option value="1.5">1.5×</option><option value="0.25">0.25×</option></select>
+          </label>
+        </div>
+        <div class="btn-row"><button id="btn-run" class="btn btn-primary" data-i18n="vfx_go">Apply &amp; download</button></div>
+        <div class="progress-track" id="pbar-wrap" hidden style="margin-top: 14px"><div class="progress-bar" id="pbar"></div></div>
+        <p id="status" style="margin: 10px 0 0; font-size: 13.5px; color: var(--ink-soft)"></p>
+        <p style="margin: 8px 0 0; font-size: 12px; color: var(--ink-soft)" data-i18n="vfx_note">Note: reverse re-encodes the video and can take a while for long clips.</p>
+      </div>
+    </div>
+    <script type="module" src="./src/app/video-fx.js"></script>
+  </body>
+</html>

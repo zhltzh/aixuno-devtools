@@ -2,3 +2,5 @@ node_modules/
 dist/
 .playwright-mcp/
 .wrangler/
+public/ffmpeg/
+scripts/ffmpeg-core.umd.cjs

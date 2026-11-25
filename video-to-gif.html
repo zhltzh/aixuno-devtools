@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video to GIF — Aixuno Devtools</title>
+    <meta name="description" content="Convert MP4/WebM/MOV video to GIF in your browser — trim range, width and FPS under your control. Free, local, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/video-to-gif.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🎞 <span data-i18n="t_vgif_name">Video to GIF</span></span>
+        <h1><span data-i18n="vgif_h1">Video to GIF</span> <span class="grad" data-i18n="vgif_h1_g">local, free</span></h1>
+        <p class="lead" data-i18n="vgif_lead">Convert a video clip into a GIF — range, width and frame rate under your control, all in your browser.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button">
+        <div class="dz-icon">🎞</div>
+        <div class="dz-text" data-i18n="vgif_drop">Drop a video here</div>
+        <div class="dz-hint" data-i18n="vgif_drop_hint">MP4 · WebM · MOV — first run loads the engine (~30 MB)</div>
+      </div>
+      <div class="card" id="opts" hidden>
+        <p style="margin: 0 0 12px; font-weight: 700" id="f-name"></p>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap">
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px"><span data-i18n="vgif_start">Start (s)</span><input type="number" id="start" min="0" step="0.5" value="0" style="width: 86px" /></label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px"><span data-i18n="vgif_dur">Duration (s)</span><input type="number" id="dur" min="1" step="0.5" value="3" style="width: 86px" /></label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px"><span data-i18n="vgif_width">Width</span><input type="number" id="width" min="80" max="1080" step="20" value="480" style="width: 92px" /></label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px"><span data-i18n="vgif_fps">FPS</span><select id="fps" style="width: 74px"><option>10</option><option selected>15</option><option>20</option><option>25</option></select></label>
+        </div>
+        <div class="btn-row">
+          <button id="btn-run" class="btn btn-primary" data-i18n="vgif_go">Convert to GIF</button>
+        </div>
+        <div class="progress-track" id="pbar-wrap" hidden style="margin-top: 14px"><div class="progress-bar" id="pbar"></div></div>
+        <p id="status" style="margin: 10px 0 0; font-size: 13.5px; color: var(--ink-soft)"></p>
+        <div id="result" style="margin-top: 14px"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/video-to-gif.js"></script>
+  </body>
+</html>

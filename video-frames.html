@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Video Frame Extractor — Aixuno Devtools</title>
+    <meta name="description" content="Extract frames from a video — one frame every N seconds or just the cover image. Batch PNG download as ZIP. Free, local." />
+    <link rel="canonical" href="https://devtools.aixuno.com/video-frames.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🖼 <span data-i18n="t_vframes_name">Frame Extractor</span></span>
+        <h1><span data-i18n="vframes_h1">Video Frame Extractor</span> <span class="grad" data-i18n="vframes_h1_g">covers &amp; stills</span></h1>
+        <p class="lead" data-i18n="vframes_lead">Pull stills from any video — one frame every N seconds, or just the first frame as a cover.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button">
+        <div class="dz-icon">🖼</div>
+        <div class="dz-text" data-i18n="vframes_drop">Drop a video here</div>
+        <div class="dz-hint" data-i18n="vframes_drop_hint">MP4 · WebM · MOV</div>
+      </div>
+      <div class="card" id="opts" hidden>
+        <p style="margin: 0 0 12px; font-weight: 700" id="f-name"></p>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap">
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="vframes_mode">Mode</span>
+            <select id="mode" style="width: 150px">
+              <option value="interval" data-i18n-text="vframes_interval">One frame every N s</option>
+              <option value="cover" data-i18n-text="vframes_cover">Cover (first frame)</option>
+              <option value="grid" data-i18n-text="vframes_grid">Grid thumbnail</option>
+            </select>
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px" id="interval-box">
+            <span data-i18n="vframes_every">Every (s)</span>
+            <input type="number" id="interval" min="0.5" step="0.5" value="2" style="width: 86px" />
+          </label>
+        </div>
+        <div class="btn-row"><button id="btn-run" class="btn btn-primary" data-i18n="vframes_go">Extract frames</button></div>
+        <div class="progress-track" id="pbar-wrap" hidden style="margin-top: 14px"><div class="progress-bar" id="pbar"></div></div>
+        <p id="status" style="margin: 10px 0 0; font-size: 13.5px; color: var(--ink-soft)"></p>
+        <div id="result" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin-top: 14px"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/video-frames.js"></script>
+  </body>
+</html>

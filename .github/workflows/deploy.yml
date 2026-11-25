@@ -30,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Prepare ffmpeg assets
+        run: npm run setup:ffmpeg
+
       - name: Build
         run: npm run build
 
