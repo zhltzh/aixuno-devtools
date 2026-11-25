@@ -40,7 +40,6 @@ document.getElementById('btn-json').addEventListener('click', () => {
     delimiter: delimEl.value,
     header: headerEl.checked,
     skipEmptyLines: true,
-    dynamicTyping: true,
   });
   if (parsed.errors.length > 0 && parsed.data.length === 0) {
     msg.className = 'err-text';

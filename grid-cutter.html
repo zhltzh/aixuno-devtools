@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grid Cutter — Aixuno Devtools</title>
+    <meta name="description" content="Cut an image into a grid for social posting — 3×3 (nine-grid), 2×2, or any custom rows and columns. Free, local." />
+    <link rel="canonical" href="https://devtools.aixuno.com/grid-cutter.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🔲 <span data-i18n="t_grid_name">Grid Cutter</span></span>
+        <h1><span data-i18n="grid_h1">Grid Cutter</span> <span class="grad" data-i18n="grid_h1_g">九宫格 · 任意行列</span></h1>
+        <p class="lead" data-i18n="grid_lead">Cut one image into a grid — 3×3 for social feeds or any custom rows × columns, downloaded as a ZIP.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button">
+        <div class="dz-icon">🔲</div>
+        <div class="dz-text" data-i18n="grid_drop">Drop an image here</div>
+        <div class="dz-hint" data-i18n="grid_drop_hint">one image · square works best</div>
+      </div>
+      <div class="card" id="grid-opts" hidden>
+        <div id="preview-box" style="text-align: center; margin-bottom: 14px">
+          <img id="preview" alt="preview" style="max-width: 240px; max-height: 240px; border-radius: 10px; border: 1px solid var(--line)" />
+        </div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center">
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="grid_rows">Rows</span>
+            <input type="number" id="rows" min="1" max="8" value="3" style="width: 70px" />
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="grid_cols">Columns</span>
+            <input type="number" id="cols" min="1" max="8" value="3" style="width: 70px" />
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <input type="checkbox" id="square" checked />
+            <span data-i18n="grid_square">Center-crop to square</span>
+          </label>
+        </div>
+        <div class="btn-row"><button id="btn-cut" class="btn btn-primary" data-i18n="grid_go">Cut &amp; download ZIP</button></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/grid-cutter.js"></script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EXIF Viewer &amp; Remover — Aixuno Devtools</title>
+    <meta name="description" content="View photo EXIF metadata (GPS, camera, date) and download a clean copy with all metadata stripped — files never leave your device." />
+    <link rel="canonical" href="https://devtools.aixuno.com/exif-tool.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🛰 <span data-i18n="t_exif_name">EXIF Tool</span></span>
+        <h1><span data-i18n="exif_h1">EXIF Viewer &amp; Remover</span> <span class="grad" data-i18n="exif_h1_g">strip your privacy</span></h1>
+        <p class="lead" data-i18n="exif_lead">Photos carry GPS location, device and timestamps. View all metadata and download a clean copy with everything removed — locally.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button">
+        <div class="dz-icon">📷</div>
+        <div class="dz-text" data-i18n="exif_drop">Drop a photo here</div>
+        <div class="dz-hint" data-i18n="exif_drop_hint">JPG · HEIC · TIFF · PNG · WebP</div>
+      </div>
+
+      <div class="card" id="exif-card" hidden>
+        <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 14px">
+          <img id="thumb" alt="preview" style="max-height: 96px; max-width: 130px; border-radius: 8px; border: 1px solid var(--line)" />
+          <div>
+            <p style="margin: 0; font-weight: 700" id="f-name"></p>
+            <p style="margin: 2px 0 0; font-size: 13px; color: var(--ink-soft)" id="f-size"></p>
+          </div>
+          <button id="btn-clean" class="btn btn-primary" style="margin-left: auto" data-i18n="exif_download_clean">Download clean copy</button>
+        </div>
+        <div class="result-list" id="exif-list"></div>
+        <p style="margin: 12px 0 0; font-size: 13px; color: var(--ok)" id="gps-warn" hidden>⚠ <span data-i18n="exif_gps_warn">This photo contains GPS coordinates — removed in the clean copy.</span></p>
+      </div>
+    </div>
+    <script type="module" src="./src/app/exif-tool.js"></script>
+  </body>
+</html>

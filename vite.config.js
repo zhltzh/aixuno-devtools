@@ -25,6 +25,11 @@ const pages = [
   'cron-parser',
   'html-entities',
   'color-tool',
+  'exif-tool',
+  'image-stitcher',
+  'watermark-tool',
+  'image-md5',
+  'grid-cutter',
 ];
 
 export default defineConfig({

@@ -1,6 +1,11 @@
 export const TOOLS_LIST = [
   { id: 'md5-modifier', href: './md5-modifier.html', icon: '🔁', nameKey: 't_md5_name', descKey: 't_md5_desc', group: 'files' },
   { id: 'hash-calculator', href: './hash-calculator.html', icon: '🔐', nameKey: 't_hash_name', descKey: 't_hash_desc', group: 'files' },
+  { id: 'exif-tool', href: './exif-tool.html', icon: '🛰', nameKey: 't_exif_name', descKey: 't_exif_desc', group: 'images' },
+  { id: 'image-stitcher', href: './image-stitcher.html', icon: '🧵', nameKey: 't_stitch_name', descKey: 't_stitch_desc', group: 'images' },
+  { id: 'watermark-tool', href: './watermark-tool.html', icon: '💧', nameKey: 't_wm_name', descKey: 't_wm_desc', group: 'images' },
+  { id: 'image-md5', href: './image-md5.html', icon: '🖼', nameKey: 't_imd5_name', descKey: 't_imd5_desc', group: 'images' },
+  { id: 'grid-cutter', href: './grid-cutter.html', icon: '🔲', nameKey: 't_grid_name', descKey: 't_grid_desc', group: 'images' },
   { id: 'timestamp', href: './timestamp.html', icon: '🕒', nameKey: 't_ts_name', descKey: 't_ts_desc', group: 'text' },
   { id: 'base64', href: './base64.html', icon: '🔤', nameKey: 't_b64_name', descKey: 't_b64_desc', group: 'text' },
   { id: 'url-encode', href: './url-encode.html', icon: '🔗', nameKey: 't_url_name', descKey: 't_url_desc', group: 'text' },

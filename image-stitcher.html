@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image Stitcher — Aixuno Devtools</title>
+    <meta name="description" content="Stitch multiple screenshots or photos into one long image (vertical or horizontal), with spacing, alignment and background color. Free, local." />
+    <link rel="canonical" href="https://devtools.aixuno.com/image-stitcher.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🧵 <span data-i18n="t_stitch_name">Image Stitcher</span></span>
+        <h1><span data-i18n="stitch_h1">Image Stitcher</span> <span class="grad" data-i18n="stitch_h1_g">chat logs, made one</span></h1>
+        <p class="lead" data-i18n="stitch_lead">Combine screenshots into a long image — order, spacing and alignment under your control.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button" data-multiple="true">
+        <div class="dz-icon">🧵</div>
+        <div class="dz-text" data-i18n="stitch_drop">Drop images here</div>
+        <div class="dz-hint" data-i18n="stitch_drop_hint">multiple selection · drag order = stitch order</div>
+      </div>
+
+      <div class="card" id="stitch-opts" hidden>
+        <div id="queue" class="result-list" style="margin-bottom: 16px"></div>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center">
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="stitch_dir">Direction</span>
+            <select id="dir" style="width: auto"><option value="v" data-i18n-text="stitch_v">Vertical</option><option value="h" data-i18n-text="stitch_h">Horizontal</option></select>
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="stitch_gap">Gap</span>
+            <input type="number" id="gap" min="0" max="100" value="0" style="width: 76px" />
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="stitch_bg">Background</span>
+            <input type="color" id="bg" value="#ffffff" style="width: 52px; height: 34px; border: 1px solid var(--line); border-radius: 8px; background: none; cursor: pointer" />
+          </label>
+        </div>
+        <div class="btn-row">
+          <button id="btn-stitch" class="btn btn-primary" data-i18n="stitch_go">Stitch &amp; download</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/image-stitcher.js"></script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Watermark Images — Aixuno Devtools</title>
+    <meta name="description" content="Add text watermarks to photos in batch — position, opacity, size and color under your control. Free, local, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/watermark-tool.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">💧 <span data-i18n="t_wm_name">Image Watermark</span></span>
+        <h1><span data-i18n="wm_h1">Watermark Images</span> <span class="grad" data-i18n="wm_h1_g">text · batch · local</span></h1>
+        <p class="lead" data-i18n="wm_lead">Stamp a text watermark on your photos — batch supported, everything stays on your device.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <label class="field" data-i18n="wm_text">Watermark text</label>
+        <input type="text" id="wm-text" value="@aixuno" />
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 12px">
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="wm_pos">Position</span>
+            <select id="wm-pos" style="width: auto">
+              <option value="br" data-i18n-text="wm_br">Bottom right</option>
+              <option value="bl" data-i18n-text="wm_bl">Bottom left</option>
+              <option value="tr" data-i18n-text="wm_tr">Top right</option>
+              <option value="tl" data-i18n-text="wm_tl">Top left</option>
+              <option value="tile" data-i18n-text="wm_tile">Tile</option>
+            </select>
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="wm_opacity">Opacity</span>
+            <input type="range" id="wm-opacity" min="0.1" max="1" step="0.05" value="0.4" style="width: 110px" />
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="wm_color">Color</span>
+            <input type="color" id="wm-color" value="#ffffff" style="width: 52px; height: 34px; border: 1px solid var(--line); border-radius: 8px; background: none; cursor: pointer" />
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="wm_size">Size %</span>
+            <input type="number" id="wm-size" min="1" max="20" value="4" style="width: 76px" />
+          </label>
+        </div>
+      </div>
+      <div class="dropzone" id="dz" tabindex="0" role="button" data-multiple="true">
+        <div class="dz-icon">💧</div>
+        <div class="dz-text" data-i18n="wm_drop">Drop images here</div>
+        <div class="dz-hint" data-i18n="wm_drop_hint">multiple selection supported</div>
+      </div>
+      <div class="btn-row" id="wm-actions" hidden>
+        <button id="btn-run" class="btn btn-primary" data-i18n="wm_run">Add watermark &amp; download</button>
+      </div>
+      <div class="result-list" id="wm-list" style="margin-top: 4px"></div>
+    </div>
+    <script type="module" src="./src/app/watermark-tool.js"></script>
+  </body>
+</html>
