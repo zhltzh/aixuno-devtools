@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meme Maker — Aixuno Devtools</title>
+    <meta name="description" content="Add classic top/bottom text to any image to make a meme — white Impact text with black outline, PNG download. Free, local." />
+    <link rel="canonical" href="https://devtools.aixuno.com/meme-maker.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">😂 <span data-i18n="t_meme_name">Meme Maker</span></span>
+        <h1><span data-i18n="meme_h1">Meme Maker</span> <span class="grad" data-i18n="meme_h1_g">classic top &amp; bottom text</span></h1>
+        <p class="lead" data-i18n="meme_lead">Drop an image, add top and bottom text, download the meme — all locally.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button">
+        <div class="dz-icon">😂</div>
+        <div class="dz-text" data-i18n="meme_drop">Drop an image here</div>
+        <div class="dz-hint" data-i18n="meme_drop_hint">JPG · PNG · WebP · GIF (first frame)</div>
+      </div>
+      <div class="card" id="opts" hidden>
+        <div style="display: grid; gap: 12px; grid-template-columns: 1fr 1fr">
+          <div>
+            <label class="field" data-i18n="meme_top">Top text</label>
+            <input type="text" id="top-text" placeholder="WHEN THE TOOL WORKS" />
+          </div>
+          <div>
+            <label class="field" data-i18n="meme_bottom">Bottom text</label>
+            <input type="text" id="bottom-text" placeholder="AND NOTHING IS UPLOADED" />
+          </div>
+        </div>
+        <label class="field" style="margin-top: 12px"><span data-i18n="meme_size">Text size</span>: <span id="size-val">9%</span></label>
+        <input type="range" id="size" min="4" max="16" value="9" />
+        <div class="btn-row"><button id="btn-make" class="btn btn-primary" data-i18n="meme_go">Generate &amp; download</button></div>
+        <div id="preview-out" style="margin-top: 14px; text-align: center"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/meme-maker.js"></script>
+  </body>
+</html>

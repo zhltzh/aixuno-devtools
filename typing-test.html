@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Typing Test — Aixuno Devtools</title>
+    <meta name="description" content="Test your typing speed in WPM/CPM with live accuracy — English and Chinese passages, all local and free." />
+    <link rel="canonical" href="https://devtools.aixuno.com/typing-test.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <style>
+      .tp-text { font-size: 19px; line-height: 2; letter-spacing: 0.01em; font-family: var(--mono); }
+      .tp-correct { color: var(--ok); }
+      .tp-wrong { color: var(--err); text-decoration: underline; }
+      .tp-current { background: #eef3ff; border-bottom: 3px solid var(--accent); animation: tp-blink 1s step-end infinite; }
+      @keyframes tp-blink { 50% { border-color: transparent; } }
+      .tp-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+      .tp-stat { text-align: center; border: 1px solid var(--line); border-radius: 12px; padding: 14px 8px; background: #fbfcfe; }
+      .tp-stat b { display: block; font-size: 30px; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .tp-stat span { font-size: 12.5px; color: var(--ink-soft); }
+    </style>
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">⌨️ <span data-i18n="t_typing_name">Typing Test</span></span>
+        <h1><span data-i18n="typing_h1">Typing Test</span> <span class="grad" data-i18n="typing_h1_g">wpm · cpm · accuracy</span></h1>
+        <p class="lead" data-i18n="typing_lead">Pick a passage, start typing, and see your speed and accuracy in real time.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="card">
+        <div class="btn-row" style="margin-top: 0">
+          <button id="btn-en" class="btn btn-secondary">English</button>
+          <button id="btn-zh" class="btn btn-secondary">中文</button>
+          <button id="btn-reset" class="btn btn-ghost" data-i18n="typing_reset">Reset</button>
+          <span id="tp-timer" style="margin-left: auto; font-family: var(--mono); font-weight: 700; color: var(--accent)">0.0s</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tp-text" id="display"></div>
+        <textarea id="tp-input" rows="3" style="margin-top: 14px" data-i18n-placeholder="typing_placeholder"></textarea>
+      </div>
+      <div class="tp-stats" id="tp-stats" hidden>
+        <div class="tp-stat"><b id="r-wpm">0</b><span data-i18n="typing_wpm">WPM</span></div>
+        <div class="tp-stat"><b id="r-cpm">0</b><span data-i18n="typing_cpm">CPM</span></div>
+        <div class="tp-stat"><b id="r-acc">0%</b><span data-i18n="typing_acc">Accuracy</span></div>
+        <div class="tp-stat"><b id="r-time">0s</b><span data-i18n="typing_time">Time</span></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/typing-test.js"></script>
+  </body>
+</html>

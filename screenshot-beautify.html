@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Screenshot Beautifier — Aixuno Devtools</title>
+    <meta name="description" content="Wrap screenshots in a gradient card with rounded corners and shadow — ready to share. Free, local, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/screenshot-beautify.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🖼 <span data-i18n="t_beauty_name">Screenshot Beautifier</span></span>
+        <h1><span data-i18n="beauty_h1">Screenshot Beautifier</span> <span class="grad" data-i18n="beauty_h1_g">gradient · rounded · shadow</span></h1>
+        <p class="lead" data-i18n="beauty_lead">Wrap a screenshot in a gradient card with rounded corners and a soft shadow — ready to share.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button">
+        <div class="dz-icon">🖼</div>
+        <div class="dz-text" data-i18n="beauty_drop">Drop a screenshot here</div>
+        <div class="dz-hint" data-i18n="beauty_drop_hint">JPG · PNG · WebP</div>
+      </div>
+      <div class="card" id="opts" hidden>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center">
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="beauty_style">Gradient</span>
+            <select id="style" style="width: 130px">
+              <option value="blue">Blue-Violet</option>
+              <option value="sunset">Sunset</option>
+              <option value="mint">Mint</option>
+              <option value="dark">Midnight</option>
+            </select>
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px">
+            <span data-i18n="beauty_padding">Padding</span>
+            <select id="padding" style="width: 86px"><option value="24">24px</option><option value="40" selected>40px</option><option value="64">64px</option></select>
+          </label>
+        </div>
+        <div class="btn-row"><button id="btn-run" class="btn btn-primary" data-i18n="beauty_go">Beautify &amp; download</button></div>
+        <div id="preview-out" style="margin-top: 14px; text-align: center"></div>
+      </div>
+    </div>
+    <script type="module" src="./src/app/screenshot-beautify.js"></script>
+  </body>
+</html>

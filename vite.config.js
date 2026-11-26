@@ -40,6 +40,9 @@ const pages = [
   'audio-trim',
   'audio-merge',
   'audio-volume',
+  'typing-test',
+  'meme-maker',
+  'screenshot-beautify',
 ];
 
 export default defineConfig({
