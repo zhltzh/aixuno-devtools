@@ -36,6 +36,10 @@ const pages = [
   'video-fx',
   'video-frames',
   'video-merge',
+  'audio-convert',
+  'audio-trim',
+  'audio-merge',
+  'audio-volume',
 ];
 
 export default defineConfig({

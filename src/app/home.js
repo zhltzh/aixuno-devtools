@@ -5,7 +5,7 @@ import { t } from '../i18n.js';
 initLayout(null);
 
 function renderGrids() {
-  const groups = { files: 'grid-files', images: 'grid-images', videos: 'grid-videos', text: 'grid-text', daily: 'grid-daily', dev: 'grid-dev' };
+  const groups = { files: 'grid-files', images: 'grid-images', videos: 'grid-videos', audios: 'grid-audios', text: 'grid-text', daily: 'grid-daily', dev: 'grid-dev' };
   for (const [group, elId] of Object.entries(groups)) {
     const el = document.getElementById(elId);
     if (!el) continue;

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Audio Volume — Aixuno Devtools</title>
+    <meta name="description" content="Boost or reduce audio volume in dB, or normalize loudness to a standard level — free, local, no upload." />
+    <link rel="canonical" href="https://devtools.aixuno.com/audio-volume.html" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%232f6bff'/%3E%3Cpath fill='%23fff' d='m8 5 5 9.5L18 5h2.5L13 19h-1L5.5 5H8Z'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">🔊 <span data-i18n="t_avol_name">Audio Volume</span></span>
+        <h1><span data-i18n="avol_h1">Audio Volume</span> <span class="grad" data-i18n="avol_h1_g">boost · normalize</span></h1>
+        <p class="lead" data-i18n="avol_lead">Boost or reduce volume in dB, or normalize the whole track to a standard loudness.</p>
+      </div>
+    </div>
+    <div class="wrap tool-body">
+      <div class="dropzone" id="dz" tabindex="0" role="button">
+        <div class="dz-icon">🔊</div>
+        <div class="dz-text" data-i18n="avol_drop">Drop an audio file here</div>
+        <div class="dz-hint" data-i18n="avol_drop_hint">MP3 · WAV · OGG · AAC · FLAC · M4A</div>
+      </div>
+      <div class="card" id="opts" hidden>
+        <p style="margin: 0 0 12px; font-weight: 700" id="f-name"></p>
+        <div style="display: flex; gap: 14px; flex-wrap: wrap">
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px"><span data-i18n="avol_mode">Mode</span>
+            <select id="mode" style="width: 150px">
+              <option value="db" data-i18n-text="avol_db">Adjust (dB)</option>
+              <option value="normalize" data-i18n-text="avol_norm">Normalize loudness</option>
+            </select>
+          </label>
+          <label style="display: inline-flex; gap: 6px; align-items: center; font-size: 14px" id="db-box">
+            <span data-i18n="avol_dbval">Volume</span>
+            <select id="dbval" style="width: 96px">
+              <option value="6">+6 dB</option><option value="3">+3 dB</option><option value="-3">−3 dB</option><option value="-6">−6 dB</option>
+            </select>
+          </label>
+        </div>
+        <div class="btn-row"><button id="btn-run" class="btn btn-primary" data-i18n="avol_go">Apply &amp; download</button></div>
+        <div class="progress-track" id="pbar-wrap" hidden style="margin-top: 14px"><div class="progress-bar" id="pbar"></div></div>
+        <p id="status" style="margin: 10px 0 0; font-size: 13.5px; color: var(--ink-soft)"></p>
+      </div>
+    </div>
+    <script type="module" src="./src/app/audio-volume.js"></script>
+  </body>
+</html>
